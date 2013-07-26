@@ -65,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 5, ../sass/main.sass */
 body {
-  padding-top: 2em;
+  padding: 2em 0;
   font-family: Helvetica, Arial, "Heiti SC", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
 
@@ -112,7 +112,7 @@ h2 {
 /* line 35, ../sass/main.sass */
 .status {
   position: relative;
-  min-height: 60px;
+  min-height: 45px;
   border-bottom: 1px solid #cccccc;
   padding: 5px 5px 0;
   padding-left: 60px;
@@ -125,31 +125,34 @@ h2 {
 .status .avatar {
   position: absolute;
   left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
 }
-/* line 49, ../sass/main.sass */
+/* line 52, ../sass/main.sass */
 .status .forwarded-content {
   border: 1px solid #ededed;
   padding: 8px 10px;
   background-color: #f7f7f7;
   color: #888888;
 }
-/* line 55, ../sass/main.sass */
+/* line 58, ../sass/main.sass */
 .status .meta {
   overflow: hidden;
   *zoom: 1;
   font-size: 0.8em;
   color: #888888;
 }
-/* line 60, ../sass/main.sass */
+/* line 63, ../sass/main.sass */
 .status .meta .privacy-indicator {
   margin-right: 5px;
 }
-/* line 63, ../sass/main.sass */
+/* line 66, ../sass/main.sass */
 .status .meta .push-right {
   float: right;
 }
 
-/* line 66, ../sass/main.sass */
+/* line 69, ../sass/main.sass */
 footer {
   padding: 5px;
   background-color: #eeeeee;
