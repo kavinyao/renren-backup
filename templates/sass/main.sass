@@ -1,0 +1,71 @@
+@import "compass/reset"
+@import "compass/css3/images"
+@import "compass/utilities/general/clearfix"
+
+body
+  padding-top: 2em
+  font-family: Helvetica, Arial, "Heiti SC", "Hiragino Sans GB", "Microsoft Yahei", sans-serif
+
+a, a:link, a:visited, a:hover, a:active
+  color: #369
+  text-decoration: none
+
+a:hover
+  text-decoration: underline
+
+.wrapper
+  width: 600px
+  margin: 0 auto
+  border: 1px solid #888
+
+h1
+  @include background-image(linear-gradient(#4288c6, #0a5ea5))
+  padding: 5px
+  font-size: 1.8em
+  color: #f9f9f9
+  text-align: center
+
+h2
+  background-color: #eceff4
+  padding: 3px
+  font-size: 1.2em
+  color: #369
+  text-align: center
+
+.status
+  position: relative
+  min-height: 60px
+  border-bottom: 1px solid #ccc
+  padding: 5px 5px 0
+  padding-left: 60px
+
+  &>*
+    margin-bottom: 5px
+
+  .avatar
+    position: absolute
+    left: 5px
+
+  .forwarded-content
+    border: 1px solid #EDEDED
+    padding: 8px 10px
+    background-color: #f7f7f7
+    color: #888
+
+  .meta
+    @include clearfix
+    font-size: .8em
+    color: #888
+
+    .privacy-indicator
+      margin-right: 5px
+
+    .push-right
+      float: right
+
+footer
+  padding: 5px
+  background-color: #eee
+  font-size: .8em
+  color: #555
+  text-align: center

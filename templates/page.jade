@@ -1,0 +1,36 @@
+doctype 5
+html
+    head
+        meta(charset='utf-8')
+        meta(name='author', content=author)
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+
+        title #{author}的人人状态备份
+
+        link(rel='stylesheet', href='main.css')
+
+    body
+        section.wrapper(role='main')
+            h1 人人状态备份
+
+            for year, statuses in status_groups
+                h2.year #{year}年
+                ol#status-list
+                    for status in statuses
+                        li.status
+                            img.avatar(src=status.headurl, height=50, width=50, alt='头像')
+                            p.content #{status.name}：!{status.content}
+                            if status.rootDoingUserName
+                                div.forwarded-content
+                                    p #{status.rootDoingUserName}：#{status.rootContent}
+                            div.meta
+                                span.date= status.dtime
+                                .push-right
+                                    if status.isPrivacy
+                                        span.privacy-indicator(title='这是一条私密状态') &#x1f512;
+                                    span.comment-count 评论(#{status.comment_count})
+
+            footer
+                .copyright
+                    | Copyright &copy; #{year} #{author} | Powered by
+                    a(href='https://github.com/kavinyao/renren-backup') renren-backup

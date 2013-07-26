@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author"{{__pyjade_attrs(terse=True, attrs=[('content',(author))])}}>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{author}}的人人状态备份</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <section role="main" class="wrapper">
+      <h1>人人状态备份</h1>{% for year,statuses in __pyjade_iter(status_groups,2) %}
+      <h2 class="year">{{year}}年</h2>
+      <ol id="status-list">{% for status in __pyjade_iter(statuses,1) %}
+        <li class="status"><img{{__pyjade_attrs(terse=True, attrs=[('src',(status.headurl))])}} height="50" width="50" alt="头像" class="avatar">
+          <p class="content">{{status.name}}：{{status.content}}</p>{% if  status.rootDoingUserName %}
+          <div class="forwarded-content">
+            <p>{{status.rootDoingUserName}}：{{status.rootContent}}</p>
+          </div>{% endif %}
+          <div class="meta"><span class="date">{{status.dtime|escape}}</span>
+            <div class="push-right">{% if  status.isPrivacy %}<span title="这是一条私密状态" class="privacy-indicator">&#x1f512;</span>{% endif %}<span class="comment-count">评论({{status.comment_count}})</span>
+            </div>
+          </div>
+        </li>{% endfor %}
+      </ol>{% endfor %}
+      <footer>
+        <div class="copyright">Copyright &copy; {{year}} {{author}} | Powered by
+<a href="https://github.com/kavinyao/renren-backup">renren-backup</a>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>

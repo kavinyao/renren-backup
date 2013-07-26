@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pyjade -c jinja page.jade page.html
+compass compile
