@@ -1,0 +1,4 @@
+Jinja2==2.7
+MarkupSafe==0.18
+requests==1.2.3
+pyjade==2.0.2
