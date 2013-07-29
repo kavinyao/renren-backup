@@ -29,7 +29,7 @@ def render_status(directory):
     statuses = sorted(itertools.chain(*status_lists), key=extract_id, reverse=True)
 
     # group statuses by year
-    status_groups = itertools.groupby(statuses, lambda s: int(s['dtime'][:s['dtime'].index('-')]))
+    status_groups = itertools.groupby(statuses, lambda s: s['dtime'][:s['dtime'].index('-')])
 
     # load template
     env = jinja2.Environment(

@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <nav id="years">
+      <ol></ol>
+    </nav>
     <section role="main" class="wrapper">
       <h1>人人状态备份</h1>{% for year,statuses in __pyjade_iter(status_groups,2) %}
-      <h2 class="year">{{year}}年</h2>
+      <h2{{__pyjade_attrs(terse=True, attrs=[('id',('year-'+year+''))])}} class="year">{{year}}年</h2>
       <ol id="status-list">{% for status in __pyjade_iter(statuses,1) %}
         <li class="status"><img{{__pyjade_attrs(terse=True, attrs=[('src',(status.headurl))])}} height="50" width="50" alt="头像" class="avatar">
           <p class="content">{{status.name}}：{{status.content}}</p>{% if  status.rootDoingUserName %}
@@ -29,5 +32,19 @@
         </div>
       </footer>
     </section>
+    <script>// generate year navigation
+window.onload = function() {
+    var nav = document.querySelector('#years ol')
+    Array.prototype.slice.call(document.querySelectorAll('.year')).forEach(function(h2) {
+        var a = document.createElement('a')
+        a.setAttribute('href', '#' + h2.id)
+        a.textContent = /\d+/.exec(h2.id)[0]
+        var li = document.createElement('li')
+        li.appendChild(a)
+        nav.appendChild(li)
+    })
+}
+
+</script>
   </body>
 </html>

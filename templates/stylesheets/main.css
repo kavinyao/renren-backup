@@ -81,13 +81,33 @@ a:hover {
 }
 
 /* line 16, ../sass/main.sass */
+#years {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+}
+/* line 21, ../sass/main.sass */
+#years ol {
+  border: 1px solid #888888;
+}
+/* line 24, ../sass/main.sass */
+#years ol li {
+  padding: 1px 5px;
+  border-bottom: 1px solid #888888;
+}
+/* line 27, ../sass/main.sass */
+#years ol li:last-child {
+  border-bottom: none;
+}
+
+/* line 30, ../sass/main.sass */
 .wrapper {
   width: 600px;
   margin: 0 auto;
   border: 1px solid #888888;
 }
 
-/* line 21, ../sass/main.sass */
+/* line 35, ../sass/main.sass */
 h1 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4288c6), color-stop(100%, #0a5ea5));
   background-image: -webkit-linear-gradient(#4288c6, #0a5ea5);
@@ -100,7 +120,7 @@ h1 {
   text-align: center;
 }
 
-/* line 28, ../sass/main.sass */
+/* line 42, ../sass/main.sass */
 h2 {
   background-color: #eceff4;
   padding: 3px;
@@ -109,7 +129,7 @@ h2 {
   text-align: center;
 }
 
-/* line 35, ../sass/main.sass */
+/* line 49, ../sass/main.sass */
 .status {
   position: relative;
   min-height: 45px;
@@ -118,11 +138,11 @@ h2 {
   padding-left: 55px;
   line-height: 1.15em;
 }
-/* line 43, ../sass/main.sass */
+/* line 57, ../sass/main.sass */
 .status > * {
   margin-bottom: 5px;
 }
-/* line 46, ../sass/main.sass */
+/* line 60, ../sass/main.sass */
 .status .avatar {
   position: absolute;
   left: 5px;
@@ -130,30 +150,30 @@ h2 {
   width: 40px;
   height: 40px;
 }
-/* line 53, ../sass/main.sass */
+/* line 67, ../sass/main.sass */
 .status .forwarded-content {
   border: 1px solid #ededed;
   padding: 8px 10px;
   background-color: #f7f7f7;
   color: #888888;
 }
-/* line 59, ../sass/main.sass */
+/* line 73, ../sass/main.sass */
 .status .meta {
   overflow: hidden;
   *zoom: 1;
   font-size: 0.8em;
   color: #888888;
 }
-/* line 64, ../sass/main.sass */
+/* line 78, ../sass/main.sass */
 .status .meta .privacy-indicator {
   margin-right: 5px;
 }
-/* line 67, ../sass/main.sass */
+/* line 81, ../sass/main.sass */
 .status .meta .push-right {
   float: right;
 }
 
-/* line 70, ../sass/main.sass */
+/* line 84, ../sass/main.sass */
 footer {
   padding: 5px;
   background-color: #eeeeee;

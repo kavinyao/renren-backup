@@ -10,11 +10,14 @@ html
         link(rel='stylesheet', href='main.css')
 
     body
+        nav#years
+            ol
+
         section.wrapper(role='main')
             h1 人人状态备份
 
             for year, statuses in status_groups
-                h2.year #{year}年
+                h2.year(id='year-#{year}') #{year}年
                 ol#status-list
                     for status in statuses
                         li.status
@@ -34,3 +37,17 @@ html
                 .copyright
                     | Copyright &copy; #{year} #{author} | Powered by
                     a(href='https://github.com/kavinyao/renren-backup') renren-backup
+
+        script
+            // generate year navigation
+            window.onload = function() {
+                var nav = document.querySelector('#years ol')
+                Array.prototype.slice.call(document.querySelectorAll('.year')).forEach(function(h2) {
+                    var a = document.createElement('a')
+                    a.setAttribute('href', '#' + h2.id)
+                    a.textContent = /\d+/.exec(h2.id)[0]
+                    var li = document.createElement('li')
+                    li.appendChild(a)
+                    nav.appendChild(li)
+                })
+            }
